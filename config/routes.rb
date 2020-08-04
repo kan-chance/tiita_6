@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  # 授業登録周り
+  get 'boards/index'=>'boards#index'
+  get 'boards/register'=>'boards#register'
+
+  resources :boards
+
   # devise_for :users
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks'

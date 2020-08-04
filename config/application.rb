@@ -1,10 +1,24 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'csv'
+
+#↓必要なければ消す
+require_relative 'boot'
+# ←
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+
+#↓必要なければ消す
+module Bookers2Debug
+  class Application < Rails::Application
+    config.load_defaults 5.2
+  end
+end
+# ←
+
 
 module Tiita6
   class Application < Rails::Application

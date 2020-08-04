@@ -1,0 +1,28 @@
+<h1>Boards#register</h1>
+<p>Find me in app/views/boards/register.html.erb</p>
+
+
+<h1>ユーザー一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>授業番号</th>
+      <th>ユーザー番号</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @myclasses.each do |myclasses| %>
+      <tr>
+        <td><%= myclasses.id %></td>
+        <td><%= myclasses.course_number %></td>
+        <td><%= myclasses.user_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%# インポート %>

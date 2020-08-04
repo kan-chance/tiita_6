@@ -5,3 +5,6 @@
 <!-- /app/views/user/usershow.html.erb -->
 <p>MyPage <%= @user.id %></p>
 <p>MyPage <%= @userida %></p>
+
+<!-- 授業登録画面に遷移 -->
+<%= link_to '授業登録',boards_register_path(@user) %>
