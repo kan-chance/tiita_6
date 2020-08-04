@@ -1,0 +1,26 @@
+<!--
+<h1>Chat Room</h1>
+<div id="messages">
+    <%= render @messages %>
+</div>
+
+<%= label_tag :content, 'Say something:' %>
+<%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>
+-->
+<h1>Chat Room</h1>
+<!--
+<form>
+    <div>
+        <input type="text" class="chat-input" id="chat-input" />
+    </div>
+    <button id="button">送信</button>
+</form>
+-->
+<p><%= link_to "授業一覧に戻る", '/', data: {"turbolinks" => false} %></p>
+<div class="container text-center">
+    <%= label_tag :content, 'ぼやく:' %>
+    <%= text_field_tag :content, nil, data: { behavior: 'room_speaker' } %>
+</div>
+<div id="messages" data-room_id="<%= @room.id %>" class="container text-center">
+    <%= render @messages %>
+</div>

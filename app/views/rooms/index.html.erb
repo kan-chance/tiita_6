@@ -1,0 +1,12 @@
+<div>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <table>
+    <% @rooms.each do |room| %>
+      <tr>
+        <td><%= "#{room.name}" %></td>
+        <td><%= link_to "チャット", room_path(room), data: {"turbolinks" => false}%></td>
+        <td><%= link_to "質問スレッド", boards_index_path(room.id)%></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

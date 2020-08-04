@@ -1,0 +1,40 @@
+<div>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <div class="container text-center">
+    <button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#board">質問を投稿する</button>
+    <div class="modal fade" id="board" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <%= form_for(@board, url: boards_create_path, method: :post) do |f| %>
+            <div class="modal-body">
+              <%= f.text_field :title, class: "form-control", placeholder: "質問タイトル" %>
+              <%= f.text_field :content, class: "form-control", placeholder: "質問内容" %>
+              <%= f.hidden_field :user_id, :value => current_user.id %>
+              <%= f.hidden_field :room_id, :value => @room.id %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+              <%= f.submit "投稿する", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>質問者</th>
+        <th>質問タイトル</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @boards.each do |board| %>
+        <tr>
+          <td><%= "#{board.user.email}" %></td>
+          <td><%= link_to "#{board.title}", "/boards/show/#{board.id}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
