@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 MyClass.create!(
-  id: 2,
+  id: 1,
   course_number: "GC41103",
   user_id: 1
 )

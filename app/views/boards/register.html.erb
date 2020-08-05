@@ -2,8 +2,7 @@
 <p>Find me in app/views/boards/register.html.erb</p>
 
 
-<h1>ユーザー一覧</h1>
-
+<h1>授業一覧（仮）</h1>
 <table>
   <thead>
     <tr>
@@ -25,4 +24,8 @@
 </table>
 
 
-<%# インポート %>
+
+<%= form_tag import_boards_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "インポート" %>
+<% end %>
