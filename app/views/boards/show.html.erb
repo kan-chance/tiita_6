@@ -4,7 +4,7 @@
 <div>
     <%= form_for(@comment, url: comments_create_path, method: :post) do |f| %>
         <div>
-            <%= f.text_field :body, class: "form-control", placeholder: "アドバイス" %>
+            <%= f.text_field :body, class: "form-control", placeholder: "アドバイス", :required => true %>
             <%= f.hidden_field :user_id, :value => current_user.id %>
             <%= f.hidden_field :board_id, :value => @board.id %>
         </div>

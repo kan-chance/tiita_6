@@ -7,8 +7,8 @@
         <div class="modal-content">
           <%= form_for(@board, url: boards_create_path, method: :post) do |f| %>
             <div class="modal-body">
-              <%= f.text_field :title, class: "form-control", placeholder: "質問タイトル" %>
-              <%= f.text_field :content, class: "form-control", placeholder: "質問内容" %>
+              <%= f.text_field :title, class: "form-control", placeholder: "質問タイトル", :required => true %>
+              <%= f.text_field :content, class: "form-control", placeholder: "質問内容", :required => true %>
               <%= f.hidden_field :user_id, :value => current_user.id %>
               <%= f.hidden_field :room_id, :value => @room.id %>
             </div>
@@ -21,20 +21,14 @@
       </div>
     </div>
   </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>質問者</th>
-        <th>質問タイトル</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="container-fluid text-center">
+    <div class="row">
       <% @boards.each do |board| %>
-        <tr>
-          <td><%= "#{board.user.email}" %></td>
-          <td><%= link_to "#{board.title}", "/boards/show/#{board.id}" %></td>
-        </tr>
+        <div class="col-md-4" style="padding:10px;">
+            <h3><%= link_to "#{board.title}", "/boards/show/#{board.id}" %></h3>
+            <p>質問者: <%= "#{board.user.email}" %></p>
+        </div>
       <% end %>
-    </tbody>
-  </table>
+    </div>
+  </div>
 </div>
