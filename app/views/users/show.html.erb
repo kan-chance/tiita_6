@@ -1,10 +1,16 @@
 <!-- マイページ -->
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<!-- <h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p> -->
+<h1>マイページ</h1>
+<br>
+<p>~授業の登録をしよう~</p>
 
 <!-- /app/views/user/usershow.html.erb -->
-<p>MyPage <%= @user.id %></p>
-<p>MyPage <%= @userida %></p>
+
+<p>MyUserIDPage(あなたのユーザーIDです): <%= @userida %></p>
+<br>
 
 <!-- 授業登録画面に遷移 -->
 <%= link_to '授業登録',boards_register_path(@user) %>
+<br>
+<%= link_to 'Twinsからcsvファイルを取得する','https://twins.tsukuba.ac.jp'%>

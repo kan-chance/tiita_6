@@ -4,7 +4,7 @@ require 'rails/all'
 require 'csv'
 
 #↓必要なければ消す
-require_relative 'boot'
+# require_relative 'boot'
 # ←
 
 # Require the gems listed in Gemfile, including any gems
@@ -12,11 +12,11 @@ require_relative 'boot'
 Bundler.require(*Rails.groups)
 
 #↓必要なければ消す
-module Bookers2Debug
-  class Application < Rails::Application
-    config.load_defaults 5.2
-  end
-end
+# module Bookers2Debug
+#   class Application < Rails::Application
+#     config.load_defaults 5.2
+#   end
+# end
 # ←
 
 

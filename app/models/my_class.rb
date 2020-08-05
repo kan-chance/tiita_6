@@ -23,10 +23,10 @@ class MyClass < ApplicationRecord
         #   content: params[:content],
         #   user_id: @current_user.id
         # )
-        Post.new(
-          content: params[:content],
-          user_id: @current_user.id
-        )
+        # Post.new(
+        #   content: params[:content],
+        #   user_id: @current_user.id
+        # )
         # ↑追加ここまで
 
         # 保存する

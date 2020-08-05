@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'boards/index'=>'boards#index'
   get 'boards/register'=>'boards#register'
 
-  resources :boards
+  # resources :boards
 
   resources :boards do
     collection { post :import }

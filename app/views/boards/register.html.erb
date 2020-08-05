@@ -8,16 +8,14 @@
     <tr>
       <th>ID</th>
       <th>授業番号</th>
-      <th>ユーザー番号</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @myclasses.each do |myclasses| %>
+    <% @subs.each do |subs| %>
       <tr>
-        <td><%= myclasses.id %></td>
-        <td><%= myclasses.course_number %></td>
-        <td><%= myclasses.user_id %></td>
+        <td><%= subs.id %></td>
+        <td><%= subs.course_number %></td>
       </tr>
     <% end %>
   </tbody>
