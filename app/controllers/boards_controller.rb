@@ -26,8 +26,9 @@ class BoardsController < ApplicationController
   def import
     # fileはtmpに自動で一時保存される
     Sub.import(params[:file])
-    redirect_to boards_register_path
-    # redirect_to boards_register_path(@user)
+    # redirect_to boards_register_path
+    # redirect_to boards_register_path(@user.id)
+    redirect_to boards_register_path(current_user.id)
     #   #どっちか
   end
 
